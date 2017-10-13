@@ -1,26 +1,13 @@
-# Basic Backend Developer Interview
+# NEO - Backend App
 
-Dear candidate, please follow this readme and solve all questions.
+This is a simple application API that retrieves a list of Near Earth Objects (NEOs) using NASA's API, processes the
+response and persists the data in our database to use in our own API in different ways. Developed in
+[Symfony](http://symfony.com/), running on [Docker](http://www.docker.com/) containers.
+[Docker Compose](http://docs.docker.com/compose/) is used for orchestration.
 
-> Before you can start, you should prepare your development environment.
+## Original Instructions
 
-**This test requires:**
-- access to the internet
-- your favourite IDE
-- (PHP) working dev environment with PHP 7 and symfony 3.x
-- (Node) working dev environment with Node.js LTS
-- database (MongoDB, Postgres, MySQL)
-- nginx or alternative simple dev web server
-
-**Good luck!**
-
-
---------
-
-
-## Test tasks:
-
-**NOTE:** You are free to use any framework you wish. Bonus points for an explanation of your choice.
+### Test tasks:
 
 1. Specify a default controller
   - for route `/`
@@ -66,7 +53,7 @@ Dear candidate, please follow this readme and solve all questions.
   - default hazardous value is `false`
   - format JSON
    
-## Additional Instructions
+### Additional Instructions
 
 - Fork this repository
 - Tests are not optional
@@ -75,7 +62,7 @@ Dear candidate, please follow this readme and solve all questions.
 - Leave comments where you were not sure how to properly proceed.
 - Implementations without a README will be automatically rejected.
 
-## Bonus Points
+### Bonus Points
 
 - Clean code!
 - Knowledge of application flow.

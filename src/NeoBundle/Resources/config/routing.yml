@@ -1,0 +1,3 @@
+neo_homepage:
+    path:     /
+    defaults: { _controller: NeoBundle:Default:index }

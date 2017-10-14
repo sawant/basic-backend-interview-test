@@ -1,0 +1,3 @@
+parameters:
+  apigateway.nasa.api_key: N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD
+  apigateway.nasa.api_url: https://api.nasa.gov/neo/rest/v1

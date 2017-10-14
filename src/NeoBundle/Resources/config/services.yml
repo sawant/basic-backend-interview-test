@@ -1,1 +1,11 @@
 services:
+    neo.api.transformer:
+        class: NeoBundle\Transformer\NeoTransformer
+
+    neo.api.gateway:
+        class: NeoBundle\Manager\GatewayAPIManager
+        arguments: ["@neo.api.service", "@doctrine.orm.entity_manager", "@neo.api.transformer"]
+
+    neo.api.service:
+        class: NeoBundle\Service\NeoAPIService
+        arguments: ["@service_container"]

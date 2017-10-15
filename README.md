@@ -2,8 +2,8 @@
 
 This is a simple application API that retrieves a list of Near Earth Objects (NEOs) using NASA's API, processes the
 response and persists the data in our database to use in our own API in different ways. Developed in
-[Symfony](http://symfony.com/), running on [Docker](http://www.docker.com/) containers.
-[Docker Compose](http://docs.docker.com/compose/) is used for orchestration.
+[Symfony](http://symfony.com/), running on [Docker](http://www.docker.com/) containers, using
+[MySQL](https://www.mysql.com) as database. [Docker Compose](http://docs.docker.com/compose/) is used for orchestration.
 
 ## Setup
 
@@ -21,15 +21,15 @@ response and persists the data in our database to use in our own API in differen
 
 - Start using the application:
 
-    `http://localhost:8080`
+    http://localhost:8080
     
 ## Tasks Demonstration
 
-- *Task 1*: Accessing the root location should fulfill this task:
+- **Task 1**: Accessing the root location should fulfill this task:
 
     http://localhost:8080
 
-- *Task 3*: The command to request data of last 3 days from NASA's API:
+- **Task 3**: The command to request data of last 3 days from NASA's API:
 
     docker exec -it mcmakler_php_1 php bin/console app:neo:fetch
     
@@ -44,19 +44,19 @@ On success, a message similar to the following will be shown on the console:
 
     Total NEO objects fetched from NASA: 41.
     
-- *Task 4*: Display all potentially hazardous asteroids:
+- **Task 4**: Display all potentially hazardous asteroids:
 
     http://localhost:8080/neo/hazardous
 
-- *Task 5*: Calculate and return the model of the fastest asteroid:
+- **Task 5**: Calculate and return the model of the fastest asteroid:
 
     http://localhost:8080/neo/fastest?hazardous={true|false}
 
-- *Task 6*: Calculate and return a year with the most asteroids
+- **Task 6**: Calculate and return a year with the most asteroids
 
     http://localhost:8080/neo/best-year?hazardous={true|false}
 
-- *Task 7*: Calculate and return a month with the most asteroids
+- **Task 7**: Calculate and return a month with the most asteroids
 
     http://localhost:8080/neo/best-month?hazardous={true|false}
     

@@ -61,8 +61,30 @@ class NeoRepository extends EntityRepository
 
         $queryBuilder->setParameter('hazardous', $hazardous);
 
-        $query  = $queryBuilder->getQuery();
+        $query = $queryBuilder->getQuery();
 
-        return $query->execute();;
+        return $query->execute();
+    }
+
+    /**
+     * @param $hazardous
+     *
+     * @return object
+     */
+    public function getBestMonth($hazardous)
+    {
+        $queryBuilder = $this->createQueryBuilder('neo');
+
+        $queryBuilder->select('MONTH(neo.date) as neo_month, COUNT(neo.id) as total')
+                     ->where('neo.date IS NOT NULL')
+                     ->andWhere('neo.isHazardous = :hazardous')
+                     ->addOrderBy('total', 'DESC')
+                     ->addGroupBy('neo_month');
+
+        $queryBuilder->setParameter('hazardous', $hazardous);
+
+        $query = $queryBuilder->getQuery();
+
+        return $query->execute();
     }
 }

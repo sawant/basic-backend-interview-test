@@ -9,3 +9,7 @@ neo_list_fastest:
 neo_list_bestyear:
     path:     /best-year
     defaults: { _controller: NeoBundle:Asteroid:getBestYear }
+
+neo_list_bestmonth:
+    path:     /best-month
+    defaults: { _controller: NeoBundle:Asteroid:getBestMonth }

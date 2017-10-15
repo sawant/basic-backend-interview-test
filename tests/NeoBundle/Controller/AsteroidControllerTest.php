@@ -98,13 +98,35 @@ class AsteroidControllerTest extends WebTestCase
     }
 
     /**
+     * @test
+     *
+     * @param $hazardous
+     *
+     * @dataProvider getHazardous
+     */
+    public function testBestMonth($hazardous)
+    {
+        $this->client->request('GET', '/neo/best-month?hazardous=' . $hazardous);
+
+        $response = $this->client->getResponse();
+        $data     = json_decode($response->getContent(), true);
+
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals('application/json', $response->headers->get('Content-Type'));
+
+        // Verify that result data has the correct keys
+        $this->assertArrayHasKey('neo_month', $data[0]);
+        $this->assertArrayHasKey('total', $data[0]);
+    }
+
+    /**
      * @return array
      */
     public function getHazardous()
     {
         return [
             [true],
-            [false]
+            [false],
         ];
     }
 }

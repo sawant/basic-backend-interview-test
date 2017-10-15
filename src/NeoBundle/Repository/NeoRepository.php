@@ -22,4 +22,12 @@ class NeoRepository extends EntityRepository
 
         $this->_em->flush();
     }
+
+    /**
+     * @return array
+     */
+    public function getHazardousNeos()
+    {
+        return $this->findBy(['isHazardous' => true]);
+    }
 }

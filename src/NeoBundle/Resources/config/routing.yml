@@ -1,3 +1,3 @@
-neo_homepage:
-    path:     /
-    defaults: { _controller: NeoBundle:Default:index }
+neo_list_hazardous:
+    path:     /hazardous
+    defaults: { _controller: NeoBundle:Asteroid:getHazardous }

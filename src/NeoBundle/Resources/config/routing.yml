@@ -5,3 +5,7 @@ neo_list_hazardous:
 neo_list_fastest:
     path:     /fastest
     defaults: { _controller: NeoBundle:Asteroid:getFastest }
+
+neo_list_bestyear:
+    path:     /best-year
+    defaults: { _controller: NeoBundle:Asteroid:getBestYear }

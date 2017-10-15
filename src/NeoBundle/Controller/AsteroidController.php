@@ -48,4 +48,22 @@ class AsteroidController extends FOSRestController
 
         return $this->handleView($view);
     }
+
+    /**
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getBestYearAction(Request $request)
+    {
+        // Get boolean value for 'hazardous' from request query string
+        $hazardous = $request->query->getBoolean('hazardous');
+
+        /** @var NeoRepository $neoRepository */
+        $neoRepository = $this->getDoctrine()->getRepository(Neo::class);
+
+        $view = $this->view($neoRepository->getBestYear($hazardous));
+
+        return $this->handleView($view);
+    }
 }

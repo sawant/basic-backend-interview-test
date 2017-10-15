@@ -8,4 +8,4 @@ services:
 
     neo.api.service:
         class: NeoBundle\Service\NeoAPIService
-        arguments: ["@service_container"]
+        arguments: ["%apigateway.nasa.api_key%", "%apigateway.nasa.api_url%"]

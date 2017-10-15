@@ -7,7 +7,6 @@
 namespace NeoBundle\Service;
 
 use Buzz\Browser;
-use Symfony\Component\DependencyInjection\Container;
 use Buzz\Client\Curl;
 
 /**
@@ -17,11 +16,6 @@ use Buzz\Client\Curl;
  */
 class NeoAPIService
 {
-    /**
-     * @var Container
-     */
-    protected $container;
-
     /**
      * @var integer
      */
@@ -37,16 +31,15 @@ class NeoAPIService
     /**
      * NeoAPIService constructor.
      *
-     * @param Container $container
+     * @param $apiKey
+     * @param $apiUrl
      */
-    public function __construct(Container $container)
+    public function __construct($apiKey, $apiUrl)
     {
-        $this->container = $container;
-
         if (sizeof(self::$config) === 0) {
             self::$config = [
-                'nasa_api_key' => $this->container->getParameter('apigateway.nasa.api_key'),
-                'nasa_api_url' => $this->container->getParameter('apigateway.nasa.api_url'),
+                'nasa_api_key' => $apiKey,
+                'nasa_api_url' => $apiUrl,
             ];
         }
     }

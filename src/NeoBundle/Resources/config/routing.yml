@@ -1,3 +1,7 @@
 neo_list_hazardous:
     path:     /hazardous
     defaults: { _controller: NeoBundle:Asteroid:getHazardous }
+
+neo_list_fastest:
+    path:     /fastest
+    defaults: { _controller: NeoBundle:Asteroid:getFastest }

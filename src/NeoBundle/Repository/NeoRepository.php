@@ -30,4 +30,17 @@ class NeoRepository extends EntityRepository
     {
         return $this->findBy(['isHazardous' => true]);
     }
+
+    /**
+     * @param $hazardous
+     *
+     * @return object
+     */
+    public function getFastestNeos($hazardous)
+    {
+        return $this->findOneBy(
+            ['isHazardous' => $hazardous],
+            ['speed' => 'DESC']
+        );
+    }
 }

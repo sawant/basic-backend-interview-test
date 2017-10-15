@@ -3,8 +3,8 @@ FROM php:5.6.12-fpm
 RUN apt-get update \
     && apt-get install -y nodejs \
     && apt-get install -y git libssl-dev zlib1g-dev libicu-dev g++ \
-    && pecl install mongo \
-    && echo extension=mongo.so > /usr/local/etc/php/conf.d/mongo.ini \
+#    && pecl install mongo \
+#    && echo extension=mongo.so > /usr/local/etc/php/conf.d/mongo.ini \
     && docker-php-ext-install zip mbstring intl pdo pdo_mysql
 
 RUN curl -sS https://getcomposer.org/installer | php \

@@ -11,6 +11,10 @@ response and persists the data in our database to use in our own API in differen
 
     `git clone git@github.com:sawant/basic-backend-interview-test.git mcmakler`
 
+- Go into the directory:
+
+    `cd mcmakler`
+
 - Use Docker Compose to orchestrate the application:
 
     `docker-compose up -d --build`

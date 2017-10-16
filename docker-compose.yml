@@ -1,5 +1,6 @@
 php:
   build: .
+  env_file: .env
   links:
 #    - db
     - mysql
